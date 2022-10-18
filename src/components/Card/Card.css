@@ -5,15 +5,31 @@ p {
 .Card {
     background: white;
     border-radius: 10px;
+    transition: transform .2s;
+}
+.Card:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .Card__img {
     text-align: center;
+
 }
+.Card__img img {
+    width: 200px;
+
+}
+
 
 .Card__types {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    text-transform: capitalize;
 }
 
 .Card__type {
@@ -42,3 +58,6 @@ p {
     font-weight: 700;
 }
 
+.numberPokemon {
+    color: #80808063;
+}

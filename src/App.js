@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import { getPokemon, getAllPokemon } from './services/pokemon';
 import './App.css';
+
+
+
 
 function App() {
   const [pokemonData, setPokemonData] = useState([])
@@ -10,6 +13,7 @@ function App() {
   const [prevUrl, setPrevUrl] = useState('');
   const [loading, setLoading] = useState(true);
   const initialURL = 'https://pokeapi.co/api/v2/pokemon'
+
 
   useEffect(() => {
     async function fetchData() {
@@ -49,13 +53,15 @@ function App() {
     setPokemonData(_pokemonData);
   }
 
+
   return (
     <>
-      <Navbar />
+       <Navbar />
       <div>
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
             <div className="btn">
+
               <button onClick={prev}>Prev</button>
               <button onClick={next}>Next</button>
             </div>
