@@ -22,6 +22,7 @@ function App() {
       setPrevUrl(response.previous);
       await loadPokemon(response.results);
       setLoading(false);
+      //console.log(response.results);
     }
     fetchData();
   }, [])
@@ -33,6 +34,7 @@ function App() {
     setNextUrl(data.next);
     setPrevUrl(data.previous);
     setLoading(false);
+
   }
 
   const prev = async () => {
@@ -50,7 +52,9 @@ function App() {
       let pokemonRecord = await getPokemon(pokemon)
       return pokemonRecord
     }))
+
     setPokemonData(_pokemonData);
+    //console.log(_pokemonData);
   }
 
 
